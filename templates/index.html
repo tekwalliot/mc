@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head> 
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Meera and Ceiko - RMS</title> 
+
+  <!-- Custom fonts for this template-->
+  <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="{% static 'css/sb-admin-2.min.css' %}" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-left" href="{% url 'home' %}">
+        <div class="sidebar-brand-icon rotate-n-15">
+          
+        </div>
+        <div class="sidebar-brand-text mx-3">Meera and Ceiko</div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'home' %}">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>RMS Dashboard</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Interface
+      </div>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-cog"></i>
+          <span>Projects</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Custom Projects</h6>
+            
+            <a class="collapse-item" href="{% url 'rwsrj' %}">RWS, Rajasthan</a>
+            <a class="collapse-item" href="#">SWPS, AP</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseNew" aria-expanded="true" aria-controls="collapseNew">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Customer Reports</span>
+        </a>
+        <div id="collapseNew" class="collapse" aria-labelledby="headingNew" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Custom Reports</h6>
+            <a class="collapse-item" href="{% url 'rwsrj' %}">Customer Reports</a>
+          </div>
+        </div>
+      </li>
+
+      
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Analysis</span></a>
+      </li>
+
+      <!-- Nav Item - Utilities Collapse Menu -->
+      
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Addons
+      </div>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-wrench"></i>
+          <span>State Wise Projects</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">States</h6>
+            <a class="collapse-item" href="#">Andhra Pradhesh</a>
+            <a class="collapse-item" href="{% url 'rwsrj' %}">Rajasthan</a>
+            <a class="collapse-item" href="#">Chhattisgarh</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Pages</span>
+        </a>
+        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Login Screens:</h6>
+            <a class="collapse-item" href="#">Login</a>
+            <a class="collapse-item" href="#">Register</a>
+            <a class="collapse-item" href="{% url 'change_password' %}">Reset Password</a>
+            <!-- <a class="collapse-item" href="{% url 'change_password' %}">Reset Password</a> -->
+            <div class="collapse-divider"></div>
+            <h6 class="collapse-header">Other Pages:</h6>
+            <a class="collapse-item" href="#">404 Page</a>
+            <a class="collapse-item" href="#">Edit Page</a>
+           <!--  <a class="collapse-item" href="{% url 'admin:index' %}">Edit Page</a> -->
+          </div>
+        </div>
+      </li>
+
+      <!-- Nav Item - Charts -->
+      
+
+      <!-- Nav Item - Tables -->
+      
+
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+          <!-- Sidebar Toggle (Topbar) -->
+          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+
+          <!-- Topbar Search -->
+          <form action="{% url 'searchid' %}" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" method="POST">
+            {% csrf_token %}
+            <div class="input-group">
+              <input type="search" class="form-control bg-light border-0 small" placeholder="Search for...(RMS ID or Serial No)" aria-label="Search" aria-describedby="basic-addon2" name='idno'>
+              <div class="input-group-append">
+                <button class="btn btn-primary" type="submit">
+                  <i class="fas fa-search fa-sm"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+
+          
+
+          <!-- Topbar Navbar -->
+          <ul class="navbar-nav ml-auto">
+
+            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+            <li class="nav-item dropdown no-arrow d-sm-none">
+              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-search fa-fw"></i>
+              </a>
+              <!-- Dropdown - Messages -->
+              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                <form class="form-inline mr-auto w-100 navbar-search">
+                  <div class="input-group">
+                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for Serial No..." aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                      <button class="btn btn-primary" type="button">
+                        <i class="fas fa-search fa-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </li>
+
+            <!-- Nav Item - Alerts -->
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-bell fa-fw"></i>
+                <!-- Counter - Alerts -->
+                <span class="badge badge-danger badge-counter">1+</span>
+              </a>
+              <!-- Dropdown - Alerts -->
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+                <h6 class="dropdown-header">
+                  Alerts Center
+                </h6>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-primary">
+                      <i class="fas fa-file-alt text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">October, 2020</div>
+                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                  </div>
+                </a>
+                
+              </div>
+            </li>
+
+            <!-- Nav Item - Messages -->
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-envelope fa-fw"></i>
+                <!-- Counter - Messages -->
+                <span class="badge badge-danger badge-counter">1</span>
+              </a>
+              <!-- Dropdown - Messages -->
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
+                <h6 class="dropdown-header">
+                  Message Center
+                </h6>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
+                    <div class="status-indicator bg-success"></div>
+                  </div>
+                  <div class="font-weight-bold">
+                    <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been having.</div>
+                    <div class="small text-gray-500">Mahender from Meera and Ceiko</div>
+                  </div>
+                </a>
+                
+                
+              </div>
+            </li>
+
+            <div class="topbar-divider d-none d-sm-block"></div>
+
+            <!-- Nav Item - User Information -->
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small" ><b>Meera and Ceiko<b></span>
+                <img class="img-profile rounded-circle" src="{% static 'img/pump.png' %}" >
+              </a>
+              <!-- Dropdown - User Information -->
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Profile
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Settings
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Activity Log
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'logout' %}" >
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Logout
+                </a>
+              </div>
+            </li>
+
+          </ul>
+
+        </nav>
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h4 style="color: blue">Dashboard - <a style="color: green">RWS, Rajasthan</a></h4>
+
+            <!-- <h6 class="h6 mb-0 text-blue-800" style="color: red">Last Connected Date: {{ sitedata.Date}}</h6> -->
+            <div class="row">
+              <div class="col-sm-12 text-center">
+
+              <a href="{% url 'rwsrj' %}" class="d-none d-sm-inline-block btn btn-sm btn-sm  btn-primary shadow-sm"><i class="fas fa-fw fa-table fa-sm text-white-50"></i> Project Details</a>
+            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm" onclick="$('#hiddenSpan').toggle();"><i class="fas fa-fw fa-folder fa-sm text-white-50"></i> Generate Reports</a>
+            </div>
+            </div>
+
+
+
+            <!-- <div class="row">
+                <div class="col-sm-12 text-center">
+                  <button class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">Project Details</button>
+                  <button class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">Generate Reports</button>
+                </div>
+            </div> -->
+
+          </div>
+
+
+<div class="card" id="hiddenSpan" style="display:none">
+                  <div class="card-body">
+
+
+         <form action="{% url 'datarep' %}" method="GET" enctype="multipart/form-data" class="form-inline">
+            <!-- <input type="hidden" name="Rid" value="{{Rid}}"> -->
+
+            <div class="form-group">
+              <label style="font-weight: normal">ID</label>:&nbsp;
+              <input type="text" name="Rid" class="form-control" placeholder="Customer ID/Serial No">
+            </div>&nbsp;&nbsp;&nbsp;
+
+            <div class="form-group">
+              <label style="font-weight: normal">Start Date</label>:&nbsp; 
+              <input type="date" name="start" class="form-control">
+            </div>&nbsp;&nbsp;&nbsp;
+
+            <div class="form-group">
+              <label style="font-weight: normal">End Date</label>:&nbsp;
+              <input type="date" name="end" class="form-control" placeholder="End Date">
+            </div>&nbsp;&nbsp;&nbsp;
+
+        <button type="submit" class="btn btn-info">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a>OR</a>
+          </form>
+
+          <div class="form-group"></div> <!-- empty line -->
+
+
+          <form action="{% url 'fullrep' %}" method="GET" enctype="multipart/form-data" class="form-inline">
+
+            <div class="form-group">
+              <label style="font-weight: normal">ID</label>:&nbsp;
+              <input type="text" name="Rid" class="form-control" placeholder="Customer ID/Serial No">
+            </div>&nbsp;&nbsp;&nbsp;
+
+
+              <button  class="btn btn-success" ><i class="fas fa-fw fa-folder fa-sm text-white-50"></i> Click Here For Full Report</button>
+            </form>
+
+
+
+        </div>
+      </div>
+
+
+
+
+          <br>
+
+
+          <!-- Content Row -->
+          <div class="row">
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Systems Installed</div>
+                      <div class="h6 mb-0 font-weight-bold text-gray-800">{{ count }}</div>
+                    </div>
+                    <div class="col-auto">
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Total Power Generation</div>
+                      <div class="h6 mb-0 font-weight-bold text-gray-800">{{ GrossKwh|floatformat:'2' }} MWH</div>
+                    </div>
+                    <div class="col-auto">
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Total Water Output</div>
+                      <div class="row no-gutters align-items-center">
+                        <div class="col-auto">
+                          <div class="h6 mb-0 mr-3 font-weight-bold text-gray-800">{{ GrossWater }} Cubic Liters</div>
+                        </div>
+                        <div class="col">
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pending Requests Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Total Faults and Alerts</div>
+                      <div class="h6 mb-0 font-weight-bold text-gray-800">9852</div>
+                    </div>
+                    <div class="col-auto">
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+           <div class="row">
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Average Run Hours Per System Per day</div>
+                      <div class="h6 mb-0 font-weight-bold text-gray-800">{{ hrsAvg | floatformat:'2' }} Hours</div>
+                    </div>
+                    <div class="col-auto">
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Average Power Generation Per System Per Day</div>
+                      <div class="h6 mb-0 font-weight-bold text-gray-800">{{ enAvg|floatformat:'2' }} KWH</div>
+                    </div>
+                    <div class="col-auto">
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Average Water Output Per System Per Day</div>
+                      <div class="row no-gutters align-items-center">
+                        <div class="col-auto">
+                          <div class="h6 mb-0 mr-3 font-weight-bold text-gray-800">{{ wtrAvg }} Liters</div>
+                        </div>
+                        <div class="col">
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pending Requests Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Average Faults and Alerts Per System</div>
+                      <div class="h6 mb-0 font-weight-bold text-gray-800">9852</div>
+                    </div>
+                    <div class="col-auto">
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-- Content Row -->
+
+          <div class="row">
+
+            <!-- Area Chart -->
+            <div class="col-xl-8 col-lg-7">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            <div class="row">
+              <div class="col-sm-12 text-center">
+
+              <label  class="d-none d-sm-inline-block btn btn-sm btn-sm  btn-primary shadow-sm" id="water"><i class="fas fa-fw fa-chart-area fa-sm text-white-50" ></i>Total Flow Analysis</label>
+              <label class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm"  id="water1"><i class="fas fa-fw fa-chart-area fa-sm text-white-50"></i>Average Water Discharge Per Day Per System</label>
+            <label class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"  id="power"><i class="fas fa-fw fa-chart-area fa-sm text-white-50"></i>Power Analysis</label>
+            
+              </div>
+            </div>
+
+          
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <div class="chart-area">
+                    <canvas id="myBarChart1"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pie Chart -->
+            <div class="col-xl-4 col-lg-5">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h7 class="m-1 font-weight-bold text-primary">Total Systems Vs Running Systems</h7>
+
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <div class="chart-pie pt-4 pb-2">
+                    <canvas id="myPieChart1"></canvas>
+                  </div>
+                  <div class="mt-4 text-center small">
+                    <span class="mr-2">
+                      <i class="fas fa-circle text-success"></i> Live Running Systems:52
+                    </span>
+                    <span class="mr-2">
+                      <i class="fas fa-circle text-primary"></i> Total Systems:74
+                    </span>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+
+            <!-- Area Chart -->
+            <div class="col-xl-12 col-lg-7">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            <div class="row">
+              <div class="col-sm-12 text-center">
+                  <label class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"  id="water"><i class="fas fa-fw fa-chart-area fa-sm text-white-50"></i>Flow Analysis</label>
+
+              <label  class="d-none d-sm-inline-block btn btn-sm btn-sm  btn-success shadow-sm" id="power"><i class="fas fa-fw fa-chart-area fa-sm text-white-50" ></i>Power Analysis</label>
+          
+              </div>
+            </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  
+                    <div id="chart5"></div>
+                  
+                </div>
+
+             
+              </div>
+            </div>
+
+          </div>
+
+          
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Meera and Ceiko 2021</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="{% url 'logout' %}">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<!--   <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script> -->
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="{% static 'vendor/jquery-easing/jquery-easing.min.js' %}"></script>
+
+  <!-- vendor/jquery-easing/jquery.easing.min.js -->
+
+  <!-- Custom scripts for all pages-->
+  <script src="{% static 'js/sb-admin-2.min.js' %}"></script>
+
+  <!-- Page level plugins -->
+  <script src="{% static 'vendor/chart.js/Chart.min.js' %}"></script>
+
+      <!-- Apex Charts -->
+  <script src="{% static 'apexcharts/scripts/apexcharts.min.js' %}"></script>
+  <script src="{% static 'apexcharts/apexcharts-setting.js' %}"></script>
+
+
+  
+
+ 
+
+ <script type="text/javascript">
+
+    // Set new default font family and font color to mimic Bootstrap's default styling
+Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+Chart.defaults.global.defaultFontColor = '#858796';
+
+function number_format(number, decimals, dec_point, thousands_sep) {
+  // *     example: number_format(1234.56, 2, ',', ' ');
+  // *     return: '1 234,56'
+  number = (number + '').replace(',', '').replace(' ', '');
+  var n = !isFinite(+number) ? 0 : +number,
+    prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+    sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
+    dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
+    s = '',
+    toFixedFix = function(n, prec) {
+      var k = Math.pow(10, prec);
+      return '' + Math.round(n * k) / k;
+    };
+  // Fix for IE parseFloat(0.55).toFixed(0) = 0;
+  s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
+  if (s[0].length > 3) {
+    s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
+  }
+  if ((s[1] || '').length < prec) {
+    s[1] = s[1] || '';
+    s[1] += new Array(prec - s[1].length + 1).join('0');
+  }
+  return s.join(dec);
+}
+
+// Bar Chart Example
+var xaxis_data = {{ xaxis|safe}};
+var yaxis_data = {{ yaxis_en|safe}};
+var ctx = document.getElementById("myBarChart1");
+var myBarChart = {
+  type: 'bar',
+  data: {
+    labels: xaxis_data,
+    datasets: [{
+      label: "Water Output: ",
+      backgroundColor: "#4e73df",
+      hoverBackgroundColor: "blue",
+      borderColor: "#4e73df",
+      // barPercentage: 0.25,
+      // barThickness: 5,
+      // axBarThickness: 3,
+      data: {{ yaxis_w|safe }},
+    }],
+  },
+
+  options: {
+    maintainAspectRatio: false,
+    // cornerRadius: 50,
+    layout: {
+      padding: {
+        left: 10,
+        right: 25,
+        top: 25,
+        bottom: 0
+      }
+    },
+
+    scales: {
+      xAxes: [{
+   
+        scaleLabel: {
+            display: true,
+            labelString: 'Installed Systems Serial Nos Wise',
+            fontColor: "#4e73df",
+            fontStyle: "bold",
+            // barPercentage: 0.2
+          },
+
+        gridLines: {
+          display: false,
+          drawBorder: false
+        },
+        ticks: {
+          maxTicksLimit: 14
+
+        },
+        maxBarThickness: 25,
+      }],
+      yAxes: [{
+        ticks: {
+          beginAtZero:true,
+          maxTicksLimit: 10,
+          padding: 1,
+          // Include a dollar sign in the ticks
+          callback: function(value, index, values) {
+            return  number_format(value);
+          }
+        },
+
+        scaleLabel: {
+            display: true,
+            labelString: 'Total Project Water Output in Cubic Liters',
+            fontColor: "#4e73df",
+            fontStyle: "bold"
+          },
+
+        gridLines: {
+          color: "rgb(234, 236, 244)",
+          zeroLineColor: "rgb(234, 236, 244)",
+          drawBorder: false,
+          borderDash: [2],
+          zeroLineBorderDash: [2]
+        }
+      }],
+    },
+    legend: {
+      display: false,
+    },
+    tooltips: {
+      titleMarginBottom: 10,
+      titleFontColor: '#6e707e',
+      titleFontSize: 14,
+      backgroundColor: "rgb(255,255,255)",
+      bodyFontColor: "#858796",
+      borderColor: '#dddfeb',
+      borderWidth: 1,
+      xPadding: 15,
+      yPadding: 15,
+      displayColors: false,
+      caretPadding: 10,
+      callbacks: {
+        label: function(tooltipItem, chart) {
+          var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
+          return datasetLabel + number_format(tooltipItem.yLabel) + ' Cubic Ltrs' ;
+        }
+      }
+    },
+  }
+};
+
+ var myChartData = new Chart(ctx, myBarChart);
+    $("#power").click(function() {
+      var data = myChartData.config.data;
+      var options = myChartData.config.options;
+      data.datasets[0].label = "Energy: ";
+      data.datasets[0].data = yaxis_data;
+      data.datasets[0].backgroundColor =  "#5cb85c";  
+      data.datasets[0].hoverBackgroundColor =  "green";
+      options.tooltips.callbacks = {
+        label: function(tooltipItem, chart) {
+          var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
+          return datasetLabel + number_format(tooltipItem.yLabel) + ' KWH' ;
+        }
+      };
+      options.scales.yAxes[0].scaleLabel = {
+            display: true,
+            labelString: 'Total Project Power Generation in KWH',
+            fontColor: "#5cb85c",
+            fontStyle: "bold"
+          };
+      options.scales.xAxes[0].scaleLabel = {
+            display: true,
+            labelString: 'Installed Systems Serial Nos Wise',
+            fontColor: "#5cb85c",
+            fontStyle: "bold"
+          };
+      data.labels = xaxis_data;
+      myChartData.update();
+    });
+
+    $("#water").click(function() {
+      var yaxis_data = {{ yaxis_w|safe }};
+      var data = myChartData.config.data;
+      var options = myChartData.config.options;
+      data.datasets[0].label = "Water Output: ";
+      data.datasets[0].data = yaxis_data;
+      data.datasets[0].backgroundColor =  "#4e73df";
+      data.datasets[0].hoverBackgroundColor =  "blue";
+      options.tooltips.callbacks = {
+        label: function(tooltipItem, chart) {
+          var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
+          return datasetLabel + number_format(tooltipItem.yLabel) + ' Cubic Ltrs' ;
+        }
+      };
+      options.scales.yAxes[0].scaleLabel = {
+            display: true,
+            labelString: 'Total Project Water Output in Cubic Liters',
+            fontColor: "#4e73df",
+            fontStyle: "bold"
+          };
+
+        options.scales.xAxes[0].scaleLabel = {
+            display: true,
+            labelString: 'Installed Systems Serial Nos Wise',
+            fontColor: "#4e73df",
+            fontStyle: "bold"
+          };
+      data.labels = xaxis_data;
+      myChartData.update();
+    });
+
+    $("#water1").click(function() {
+      var yaxis_data = {{ yaxis_wa|safe }};
+      var data = myChartData.config.data;
+      var options = myChartData.config.options;
+      data.datasets[0].label = "Avg. Water Output: ";
+      data.datasets[0].data = yaxis_data;
+      data.datasets[0].backgroundColor =  "#5bc0de";
+      data.datasets[0].hoverBackgroundColor =  "#24a0ed";
+      options.tooltips.callbacks = {
+        label: function(tooltipItem, chart) {
+          var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
+          return datasetLabel + number_format(tooltipItem.yLabel) + ' Liters Per day' ;
+        }
+      };
+      options.scales.yAxes[0].scaleLabel = {
+            display: true,
+            labelString: 'Avrg. Water O/P Per System Per Day',
+            fontColor: "#5bc0de",
+            fontStyle: "bold"
+          };
+
+        options.scales.xAxes[0].scaleLabel = {
+            display: true,
+            labelString: 'Installed Systems Serial Nos Wise',
+            fontColor: "#5bc0de",
+            fontStyle: "bold"
+          };
+      data.labels = xaxis_data;
+      myChartData.update();
+    });
+
+    //  $("#2").click(function() {
+    //   var yaxis_data  = [60, 80, 100, 120];
+    //   var data = myChartData.config.data;
+    //   // myChartData.config.type = 'line'
+    //   data.datasets[0].data = yaxis_data;
+    //   data.labels = xaxis_data;
+    //   myChartData.update();
+    // });
+
+  </script>
+
+  <script type="text/javascript">
+  
+  // Set new default font family and font color to mimic Bootstrap's default styling
+Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+Chart.defaults.global.defaultFontColor = '#858796';
+
+// Pie Chart Example
+var ctx = document.getElementById("myPieChart1");
+var myPieChart = new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ["Total Systems", "Live Running Systems"],
+    datasets: [{
+      data: [{{ count }}, 52],
+      backgroundColor: ['#4e73df', '#1cc88a'],
+      hoverBackgroundColor: ['#2e59d9', '#17a673'],
+      hoverBorderColor: "rgba(234, 236, 244, 1)",
+    }],
+  },
+  options: {
+    maintainAspectRatio: false,
+    tooltips: {
+      backgroundColor: "rgb(255,255,255)",
+      bodyFontColor: "#858796",
+      borderColor: '#dddfeb',
+      borderWidth: 1,
+      xPadding: 15,
+      yPadding: 15,
+      displayColors: false,
+      caretPadding: 10,
+    },
+    legend: {
+      display: false
+    },
+    cutoutPercentage: 80,
+  },
+});
+</script>   
+
+</script>   
+
+<script type="text/javascript">
+  var options = {
+  series: [{
+    name: 'Likes',
+    data: [4, 3, 10, 9, 29, 19, 22, 9, 12, 7, 19, 5, 13, 9, 17, 2, 7, 5]
+  }],
+  chart: {
+    height: 350,
+    type: 'line',
+    toolbar: {
+      show: false,
+    }
+  },
+  grid: {
+    show: false,
+    padding: {
+      left: 0,
+      right: 0
+    }
+  },
+  stroke: {
+    width: 7,
+    curve: 'smooth'
+  },
+  xaxis: {
+    type: 'datetime',
+    categories: ['1/11/2020', '2/11/2020', '3/11/2020', '4/11/2020', '5/11/2020', '6/11/2020', '7/11/2020', '8/11/2020', '9/11/2020', '10/11/2020', '11/11/2020', '12/11/2020', '1/11/2021', '2/11/2021', '3/11/2021','4/11/2021' ,'5/11/2021' ,'6/11/2021'],
+  },
+  title: {
+    text: 'Social Media',
+    align: 'left',
+    style: {
+      fontSize: "16px",
+      color: '#666'
+    }
+  },
+  fill: {
+    type: 'gradient',
+    gradient: {
+      shade: 'dark',
+      gradientToColors: [ '#1b00ff'],
+      shadeIntensity: 1,
+      type: 'horizontal',
+      opacityFrom: 1,
+      opacityTo: 1,
+      stops: [0, 100, 100, 100]
+    },
+  },
+  markers: {
+    size: 4,
+    colors: ["#FFA41B"],
+    strokeColors: "#fff",
+    strokeWidth: 2,
+    hover: {
+      size: 7,
+    }
+  },
+  yaxis: {
+    min: -10,
+    max: 40,
+    title: {
+      text: 'Engagement',
+    },
+  }
+};
+var chart = new ApexCharts(document.querySelector("#chart1"), options);
+chart.render();
+
+var options2 = {
+  series: [{
+    name: 'series1',
+    data: [31, 40, 28, 51, 42, 109, 100]
+  }, {
+    name: 'series2',
+    data: [11, 32, 45, 32, 34, 52, 41]
+  }],
+  chart: {
+    height: 350,
+    type: 'area',
+    toolbar: {
+      show: false,
+    }
+  },
+  grid: {
+    show: false,
+    padding: {
+      left: 0,
+      right: 0
+    }
+  },
+  dataLabels: {
+    enabled: false
+  },
+  stroke: {
+    curve: 'smooth'
+  },
+  xaxis: {
+    type: 'datetime',
+    categories: ["2020-09-19T00:00:00.000Z", "2020-09-19T01:30:00.000Z", "2020-09-19T02:30:00.000Z", "2020-09-19T03:30:00.000Z", "2020-09-19T04:30:00.000Z", "2020-09-19T05:30:00.000Z", "2020-09-19T06:30:00.000Z"]
+  },
+  tooltip: {
+    x: {
+      format: 'dd/MM/yy HH:mm'
+    },
+  },
+};
+var chart = new ApexCharts(document.querySelector("#chart2"), options2);
+chart.render();
+
+var options3 = {
+  series: [{
+    name: 'Net Profit',
+    data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
+  }, {
+    name: 'Revenue',
+    data: [76, 85, 101, 98, 87, 105, 91, 114, 94]
+  }, {
+    name: 'Free Cash Flow',
+    data: [35, 41, 36, 26, 45, 48, 52, 53, 41]
+  }],
+  chart: {
+    type: 'bar',
+    height: 350,
+    toolbar: {
+      show: false,
+    }
+  },
+  plotOptions: {
+    bar: {
+      horizontal: false,
+      columnWidth: '25%',
+      endingShape: 'rounded'
+    },
+  },
+  dataLabels: {
+    enabled: false
+  },
+  stroke: {
+    show: true,
+    width: 2,
+    colors: ['transparent']
+  },
+  xaxis: {
+    categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+  },
+  yaxis: {
+    title: {
+      text: '$(thousands)'
+    }
+  },
+  fill: {
+    opacity: 1
+  },
+  tooltip: {
+    y: {
+      formatter: function (val) {
+        return "$" + val + "thousands"
+      }
+    }
+  }
+};
+var chart = new ApexCharts(document.querySelector("#chart3"), options3);
+chart.render();
+
+var options4 = {
+  series: [{
+    data: [44, 55, 41, 64, 22, 43, 21]
+  }, {
+    data: [53, 32, 33, 52, 13, 44, 32]
+  }],
+  chart: {
+    type: 'bar',
+    height: 430,
+    toolbar: {
+      show: false,
+    }
+  },
+  grid: {
+    show: false,
+    padding: {
+      left: 0,
+      right: 0
+    }
+  },
+  plotOptions: {
+    bar: {
+      horizontal: true,
+      dataLabels: {
+        position: 'top',
+      },
+    }
+  },
+  dataLabels: {
+    enabled: true,
+    offsetX: -6,
+    style: {
+      fontSize: '12px',
+      colors: ['#fff']
+    }
+  },
+  stroke: {
+    show: true,
+    width: 1,
+    colors: ['#fff']
+  },
+  xaxis: {
+    categories: [2014, 2015, 2016, 2017, 2018, 2019, 2020],
+  },
+};
+var chart = new ApexCharts(document.querySelector("#chart4"), options4);
+chart.render();
+
+var options5 = {
+  series: [{
+    name: 'Average Water Output in Liters',
+    type: 'column',
+    data: {{yaxis_wa|safe}}
+  }, {
+    name: 'Total Water Ouput in Cubic Liters',
+    type: 'area',
+    data: {{yaxis_w|safe}}
+  }, {
+    name: 'Total Energy in KWH',
+    type: 'line',
+    data: {{yaxis_en|safe}}
+  }],
+  chart: {
+    height: 350,
+    type: 'line',
+    stacked: false,
+    toolbar: {
+      show: false,
+    }
+  },
+  grid: {
+    show: false,
+    padding: {
+      left: 0,
+      right: 0
+    }
+  },
+  stroke: {
+    width: [0, 2, 5],
+    curve: 'smooth'
+  },
+  plotOptions: {
+    bar: {
+      columnWidth: '30%',
+      endingShape: 'rounded'
+    }
+  },
+
+  fill: {
+    opacity: [0.85, 0.25, 1],
+    gradient: {
+      inverseColors: false,
+      shade: 'light',
+      type: "vertical",
+      opacityFrom: 0.85,
+      opacityTo: 0.55,
+      stops: [0, 100, 100, 100]
+    }
+  },
+  labels: {{xaxis|safe}},
+  markers: {
+    size: 0
+  },
+  xaxis: {
+    
+    title: {
+      text: 'RMS ID',
+    },
+
+    min: 1,
+    max: 74
+  },
+  yaxis: {
+    // title: {
+    //   text: 'Points',
+    // },
+    min: 0,
+    // max: 40000
+  },
+  legend: {
+    position: 'top',
+    horizontalAlign: 'left'
+  },
+  tooltip: {
+    shared: true,
+    intersect: false,
+    x: {
+      formatter: function (x) {
+        if (typeof x !== "undefined") {
+          return " RMS ID: " + x.toFixed(0);
+        }
+        return y;
+
+      }
+    }
+  }
+};
+var chart = new ApexCharts(document.querySelector("#chart5"), options5);
+chart.render();
+
+var options6 = {
+  series: [
+  {
+    name: 'Bob',
+    data: [
+    {
+      x: 'Design',
+      y: [
+      new Date('2020-03-05').getTime(),
+      new Date('2020-03-08').getTime()
+      ]
+    },
+    {
+      x: 'Code',
+      y: [
+      new Date('2020-03-02').getTime(),
+      new Date('2020-03-05').getTime()
+      ]
+    },
+    {
+      x: 'Code',
+      y: [
+      new Date('2020-03-05').getTime(),
+      new Date('2020-03-07').getTime()
+      ]
+    },
+    {
+      x: 'Test',
+      y: [
+      new Date('2020-03-03').getTime(),
+      new Date('2020-03-09').getTime()
+      ]
+    },
+    {
+      x: 'Test',
+      y: [
+      new Date('2020-03-08').getTime(),
+      new Date('2020-03-11').getTime()
+      ]
+    },
+    {
+      x: 'Validation',
+      y: [
+      new Date('2020-03-11').getTime(),
+      new Date('2020-03-16').getTime()
+      ]
+    },
+    {
+      x: 'Design',
+      y: [
+      new Date('2020-03-01').getTime(),
+      new Date('2020-03-03').getTime()
+      ]
+    }
+    ]
+  },
+  {
+    name: 'Joe',
+    data: [
+    {
+      x: 'Design',
+      y: [
+      new Date('2020-03-02').getTime(),
+      new Date('2020-03-05').getTime()
+      ]
+    },
+    {
+      x: 'Test',
+      y: [
+      new Date('2020-03-06').getTime(),
+      new Date('2020-03-16').getTime()
+      ]
+    },
+    {
+      x: 'Code',
+      y: [
+      new Date('2020-03-03').getTime(),
+      new Date('2020-03-07').getTime()
+      ]
+    },
+    {
+      x: 'Deployment',
+      y: [
+      new Date('2020-03-20').getTime(),
+      new Date('2020-03-22').getTime()
+      ]
+    },
+    {
+      x: 'Design',
+      y: [
+      new Date('2020-03-10').getTime(),
+      new Date('2020-03-16').getTime()
+      ]
+    }
+    ]
+  },
+  {
+    name: 'Dan',
+    data: [
+    {
+      x: 'Code',
+      y: [
+      new Date('2020-03-10').getTime(),
+      new Date('2020-03-17').getTime()
+      ]
+    },
+    {
+      x: 'Validation',
+      y: [
+      new Date('2020-03-05').getTime(),
+      new Date('2020-03-09').getTime()
+      ]
+    },
+    ]
+  }
+  ],
+  chart: {
+    height: 450,
+    type: 'rangeBar',
+    toolbar: {
+      show: false,
+    }
+  },
+  grid: {
+    show: false,
+    padding: {
+      left: 0,
+      right: 0
+    }
+  },
+  plotOptions: {
+    bar: {
+      horizontal: true,
+      barHeight: '80%'
+    }
+  },
+  xaxis: {
+    type: 'datetime'
+  },
+  stroke: {
+    width: 1
+  },
+  fill: {
+    type: 'solid',
+    opacity: 0.6
+  },
+  legend: {
+    position: 'top',
+    horizontalAlign: 'left'
+  }
+};
+var chart = new ApexCharts(document.querySelector("#chart6"), options6);
+chart.render();
+
+var options7 = {
+  series: [{
+    data: [{
+      x: new Date(1538778600000),
+      y: [6629.81, 6650.5, 6623.04, 6633.33]
+    },
+    {
+      x: new Date(1538780400000),
+      y: [6632.01, 6643.59, 6620, 6630.11]
+    },
+    {
+      x: new Date(1538782200000),
+      y: [6630.71, 6648.95, 6623.34, 6635.65]
+    },
+    {
+      x: new Date(1538784000000),
+      y: [6635.65, 6651, 6629.67, 6638.24]
+    },
+    {
+      x: new Date(1538785800000),
+      y: [6638.24, 6640, 6620, 6624.47]
+    },
+    {
+      x: new Date(1538787600000),
+      y: [6624.53, 6636.03, 6621.68, 6624.31]
+    },
+    {
+      x: new Date(1538789400000),
+      y: [6624.61, 6632.2, 6617, 6626.02]
+    },
+    {
+      x: new Date(1538791200000),
+      y: [6627, 6627.62, 6584.22, 6603.02]
+    },
+    {
+      x: new Date(1538793000000),
+      y: [6605, 6608.03, 6598.95, 6604.01]
+    },
+    {
+      x: new Date(1538794800000),
+      y: [6604.5, 6614.4, 6602.26, 6608.02]
+    },
+    {
+      x: new Date(1538796600000),
+      y: [6608.02, 6610.68, 6601.99, 6608.91]
+    },
+    {
+      x: new Date(1538798400000),
+      y: [6608.91, 6618.99, 6608.01, 6612]
+    },
+    {
+      x: new Date(1538800200000),
+      y: [6612, 6615.13, 6605.09, 6612]
+    },
+    {
+      x: new Date(1538802000000),
+      y: [6612, 6624.12, 6608.43, 6622.95]
+    },
+    {
+      x: new Date(1538803800000),
+      y: [6623.91, 6623.91, 6615, 6615.67]
+    },
+    {
+      x: new Date(1538805600000),
+      y: [6618.69, 6618.74, 6610, 6610.4]
+    },
+    {
+      x: new Date(1538807400000),
+      y: [6611, 6622.78, 6610.4, 6614.9]
+    },
+    {
+      x: new Date(1538809200000),
+      y: [6614.9, 6626.2, 6613.33, 6623.45]
+    },
+    {
+      x: new Date(1538811000000),
+      y: [6623.48, 6627, 6618.38, 6620.35]
+    },
+    {
+      x: new Date(1538812800000),
+      y: [6619.43, 6620.35, 6610.05, 6615.53]
+    },
+    {
+      x: new Date(1538814600000),
+      y: [6615.53, 6617.93, 6610, 6615.19]
+    },
+    {
+      x: new Date(1538816400000),
+      y: [6615.19, 6621.6, 6608.2, 6620]
+    },
+    {
+      x: new Date(1538818200000),
+      y: [6619.54, 6625.17, 6614.15, 6620]
+    },
+    {
+      x: new Date(1538820000000),
+      y: [6620.33, 6634.15, 6617.24, 6624.61]
+    },
+    {
+      x: new Date(1538821800000),
+      y: [6625.95, 6626, 6611.66, 6617.58]
+    },
+    {
+      x: new Date(1538823600000),
+      y: [6619, 6625.97, 6595.27, 6598.86]
+    },
+    {
+      x: new Date(1538825400000),
+      y: [6598.86, 6598.88, 6570, 6587.16]
+    },
+    {
+      x: new Date(1538827200000),
+      y: [6588.86, 6600, 6580, 6593.4]
+    },
+    ]
+  }],
+  chart: {
+    type: 'candlestick',
+    height: 350,
+    toolbar: {
+      show: false,
+    }
+  },
+  grid: {
+    show: false,  },
+  title: {
+    text: 'CandleStick Chart',
+    align: 'left'
+  },
+  xaxis: {
+    type: 'datetime'
+  },
+  yaxis: {
+    tooltip: {
+      enabled: true
+    }
+  }
+};
+var chart = new ApexCharts(document.querySelector("#chart7"), options7);
+chart.render();
+
+var options8 = {
+  series: [44, 55, 41, 17, 15],
+  chart: {
+    type: 'donut',
+  },
+  responsive: [{
+    breakpoint: 480,
+    options: {
+      chart: {
+        width: 200
+      },
+      legend: {
+        position: 'bottom'
+      }
+    }
+  }]
+};
+var chart = new ApexCharts(document.querySelector("#chart8"), options8);
+chart.render();
+
+var options9 = {
+  series: [76, 67, 61, 90],
+  chart: {
+    height: 390,
+    type: 'radialBar',
+  },
+  plotOptions: {
+    radialBar: {
+      offsetY: 0,
+      startAngle: 0,
+      endAngle: 270,
+      hollow: {
+        margin: 5,
+        size: '40%',
+        background: 'transparent',
+        image: undefined,
+      },
+      dataLabels: {
+        name: {
+          show: false,
+        },
+        value: {
+          show: false,
+        }
+      }
+    }
+  },
+  colors: ['#1ab7ea', '#0084ff', '#39539E', '#0077B5'],
+  labels: ['Vimeo', 'Messenger', 'Facebook', 'LinkedIn'],
+  legend: {
+    show: true,
+    floating: true,
+    fontSize: '14px',
+    position: 'left',
+    offsetX: 40,
+    offsetY: 15,
+    labels: {
+      useSeriesColors: true,
+    },
+    markers: {
+      size: 0
+    },
+    formatter: function(seriesName, opts) {
+      return seriesName + ":  " + opts.w.globals.series[opts.seriesIndex]
+    },
+    itemMargin: {
+      vertical: 3
+    }
+  },
+  responsive: [{
+    breakpoint: 480,
+    options: {
+      legend: {
+        show: false
+      }
+    }
+  }]
+};
+var chart = new ApexCharts(document.querySelector("#chart9"), options9);
+chart.render();
+</script>
+
+</body>
+
+</html>
