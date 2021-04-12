@@ -2,7 +2,7 @@
 {% load static %}
 <html lang="en">
 
-<head>
+<head> 
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -99,7 +99,7 @@
       
 
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{% url 'analysis' %}">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Analysis</span></a>
       </li>
@@ -337,9 +337,10 @@
           <div class="col-md-4 font-weight-normal" style="color: blue">Duration:  <font color="green">{{sDate}} to {{eDate}}
           </font></div>
           <div class="col-md-4 font-weight-normal" style="color: blue">Total Energy:  <font color="green">{{tEnergy|floatformat:'3'}} MWH</font></div>
-          <div class="col-md-4 font-weight-normal" style="color: blue">Total Water Output:  <font color="green">{{tLpd|floatformat:'2'}} Cubic Liters</font></div>
+          <div class="col-md-4 font-weight-normal" style="color: blue">Total Water Output:  <font color="green">{{tLpd}} Cubic Liters</font></div>
           <div class="col-md-4 font-weight-normal" style="color: blue">Total Run Hours:  <font color="green">{{tHrs|floatformat:'1'}} Hours</font></div>
           <div class="col-md-4 font-weight-normal" style="color: blue">Total Faults and Alerts:  <font color="green">{{faults}}</font></div>
+          <div class="col-md-4 font-weight-normal" style="color: blue">Avg. Water Output Per Day:  <font color="green">{{avgLpd}} Liters</font></div>
 
 
         </div>
@@ -460,14 +461,14 @@
                 extend: 'excel',
                 title: 'Meera and Ceiko, RWS-Rajasthan - Detailed Data Report',
                 className: 'btn',
-                messageTop: 'Village: {{sitedtls.Village}},   Panchayat: {{sitedtls.Panchayat}},   District: {{sitedtls.District}},   Report Duration: {{sDate}} to {{eDate}},   Total Energy: {{tEnergy|floatformat:'2'}} MWH,   Water Output: {{tLpd|floatformat:'2'}} Cubic Liters,    Total Pump Run Hours: {{tHrs|floatformat:'1'}} Hours,   Total Faults and Alerts: {{faults}}'
+                messageTop: 'Village: {{sitedtls.Village}},   Panchayat: {{sitedtls.Panchayat}},   District: {{sitedtls.District}},   Report Duration: {{sDate}} to {{eDate}},   Total Energy: {{tEnergy|floatformat:'2'}} MWH,   Water Output: {{tLpd}} Cubic Liters,    Total Pump Run Hours: {{tHrs|floatformat:'1'}} Hours,   Total Faults and Alerts: {{faults}}'
             },
 
               {
                 extend: 'pdf',
                 title: 'Meera and Ceiko, RWS-Rajasthan - Detailed Data Report',
                 className: 'btn',
-                messageTop: 'Village: {{sitedtls.Village}},   Panchayat: {{sitedtls.Panchayat}},   District: {{sitedtls.District}},   Report Duration: {{sDate}} to {{eDate}},   Total Energy: {{tEnergy|floatformat:'2'}} MWH,   Water Output: {{tLpd|floatformat:'2'}} Cubic Liters,   Total Pump Run Hours: {{tHrs|floatformat:'1'}} Hours,   Total Faults and Alerts: {{faults}}'
+                messageTop: 'Village: {{sitedtls.Village}},   Panchayat: {{sitedtls.Panchayat}},   District: {{sitedtls.District}},   Report Duration: {{sDate}} to {{eDate}},   Total Energy: {{tEnergy|floatformat:'2'}} MWH,   Water Output: {{tLpd}} Cubic Liters,   Total Pump Run Hours: {{tHrs|floatformat:'1'}} Hours,   Total Faults and Alerts: {{faults}}'
             },
 
 
@@ -475,7 +476,7 @@
                 extend: 'print',
                 title: 'Meera and Ceiko, RWS-Rajasthan - Detailed Data Report',
                 className: 'btn',
-                messageTop: '<h6>Village: {{sitedtls.Village}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Panchayat: {{sitedtls.Panchayat}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;District: {{sitedtls.District}}</h6><h6>Report Duration: {{sDate}} to {{eDate}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total Energy: {{tEnergy|floatformat:'2'}} MWH&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Water Output: {{tLpd|floatformat:'2'}}Cubic Liters</h6><h6> Total Pump Run Hours: {{tHrs|floatformat:'1'}} Hours&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total Faults and Alerts: {{faults}}</h6>'
+                messageTop: '<h6>Village: {{sitedtls.Village}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Panchayat: {{sitedtls.Panchayat}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;District: {{sitedtls.District}}</h6><h6>Report Duration: {{sDate}} to {{eDate}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total Energy: {{tEnergy|floatformat:'2'}} MWH&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Water Output: {{tLpd}} Cubic Liters</h6><h6> Total Pump Run Hours: {{tHrs|floatformat:'1'}} Hours&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total Faults and Alerts: {{faults}}</h6>'
             }
 
           

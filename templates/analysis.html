@@ -371,172 +371,31 @@
         </div>
       </div>
 
-
-
-
           <br>
 
+ <div class="row">
 
-          <!-- Content Row -->
-          <div class="row">
+            <!-- Area Chart -->
+            <div class="col-xl-12 col-lg-7">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                               <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h7 class="m-1 font-weight-bold text-primary">Comparative Perforormance Analysis for Total Flow Vs Avg. Flow Per Day Vs Total Power Per System</h7>
 
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Systems Installed</div>
-                      <div class="h6 mb-0 font-weight-bold text-gray-800">{{ count }}</div>
-                    </div>
-                    <div class="col-auto">
-                      
-                    </div>
-                  </div>
                 </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  
+                    <div id="chart5"></div>
+                  
+                </div>
+
+             
               </div>
             </div>
 
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Total Power Generation</div>
-                      <div class="h6 mb-0 font-weight-bold text-gray-800">{{ GrossKwh|floatformat:'2' }} MWH</div>
-                    </div>
-                    <div class="col-auto">
-                      
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-info shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Total Water Output</div>
-                      <div class="row no-gutters align-items-center">
-                        <div class="col-auto">
-                          <div class="h6 mb-0 mr-3 font-weight-bold text-gray-800">{{ GrossWater }} Cubic Liters</div>
-                        </div>
-                        <div class="col">
-
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Pending Requests Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Total Faults and Alerts</div>
-                      <div class="h6 mb-0 font-weight-bold text-gray-800">57987</div>
-                    </div>
-                    <div class="col-auto">
-                      
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
 
-           <div class="row">
-
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Average Run Hours Per System Per day</div>
-                      <div class="h6 mb-0 font-weight-bold text-gray-800">{{ hrsAvg | floatformat:'2' }} Hours</div>
-                    </div>
-                    <div class="col-auto">
-                      
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Average Power Generation Per System Per Day</div>
-                      <div class="h6 mb-0 font-weight-bold text-gray-800">{{ enAvg|floatformat:'2' }} KWH</div>
-                    </div>
-                    <div class="col-auto">
-                      
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-info shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Average Water Output Per System Per Day</div>
-                      <div class="row no-gutters align-items-center">
-                        <div class="col-auto">
-                          <div class="h6 mb-0 mr-3 font-weight-bold text-gray-800">{{ wtrAvg }} Liters</div>
-                        </div>
-                        <div class="col">
-
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Pending Requests Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Average Faults and Alerts Per System</div>
-                      <div class="h6 mb-0 font-weight-bold text-gray-800">788</div>
-                    </div>
-                    <div class="col-auto">
-                      
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-
-          <!-- Content Row -->
 
           <div class="row">
 
@@ -581,7 +440,7 @@
                   </div>
                   <div class="mt-4 text-center small">
                     <span class="mr-2">
-                      <i class="fas fa-circle text-success"></i> Live Running Systems:{{ runsyst }}
+                      <i class="fas fa-circle text-success"></i> Live Running Systems:{{runsyst}}
                     </span>
                     <span class="mr-2">
                       <i class="fas fa-circle text-primary"></i> Total Systems:{{ count }}
@@ -592,32 +451,6 @@
               </div>
             </div>
           </div>
-
-          <div class="row">
-
-            <!-- Area Chart -->
-            <div class="col-xl-12 col-lg-7">
-              <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
-                               <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h7 class="m-1 font-weight-bold text-success">Comparative Perforormance Analysis for Total Flow Vs Avg. Flow Per Day Vs Total Power Per System</h7>
-
-                </div>
-                <!-- Card Body -->
-                <div class="card-body">
-                  
-                    <div id="chart5"></div>
-                  
-                </div>
-
-             
-              </div>
-            </div>
-
-          </div>
-
-          
-      <!-- End of Main Content -->
 
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
@@ -936,7 +769,7 @@ var myPieChart = new Chart(ctx, {
   data: {
     labels: ["Total Systems", "Live Running Systems"],
     datasets: [{
-      data: [{{ count }}, {{ runsyst }}],
+      data: [{{ count }}, {{runsyst}}],
       backgroundColor: ['#4e73df', '#1cc88a'],
       hoverBackgroundColor: ['#2e59d9', '#17a673'],
       hoverBorderColor: "rgba(234, 236, 244, 1)",
@@ -1027,10 +860,8 @@ var options5 = {
       text: 'RMS ID',
     },
 
-
     // min: 1,
-    // max: 74,
-    
+    // max: 74
   },
   yaxis: {
     // title: {
