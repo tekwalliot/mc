@@ -30,7 +30,7 @@ def home(request):
 	
 	if todaydate.DateTime.date() != date.today():
 		todaydate.DateTime = datetime.now() 
-		runsyst = random.randint(52, 74)
+		runsyst = random.randint(52, 60)
 		todaydate.Frequency = runsyst 
 		todaydate.save()
 		runsyst = int(todaydate.Frequency)
