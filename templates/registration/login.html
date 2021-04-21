@@ -45,7 +45,7 @@
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">
-                    <img class="img-responsive fit-image" src="{% static 'img/meeralogo.png' %}" style="display: block;
+                    <img class="img-responsive fit-image" src="{% static 'img/mclogo.png' %}" style="display: block;
   margin-top: -50px;
   margin-left: -73px;
 
@@ -53,7 +53,7 @@
   <br>
 
 
-                    <h2 class="h4  mb-4" style="color: #FF5F00">Remote Monitoring System</h2>
+                    <h4 class="h4  mb-4" style="color: #FF5F00">Remote Monitoring System</h4>
                     <!-- <h6 class="h6  mb-4" style="color: green">Please Login for Enter into Dashboard</h6> -->
                   </div>
 
@@ -69,6 +69,8 @@
     {% else %}
       <p style="color: blue">Please Login to See Remote Monitoring Data and Analysis</p>
     {% endif %}
+  {% else %}
+  <div class="h5  mb-4 text-center" style="color: green">Welcome Back !</div>
   {% endif %}
                  
             <form method="post" action="{% url 'login' %}">

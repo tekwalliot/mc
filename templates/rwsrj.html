@@ -29,7 +29,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'plugins/table/datatable/datatables.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'plugins/table/datatable/custom_dt_html5.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'plugins/table/datatable/dt-global_style.css' %}">
-    <!-- END PAGE LEVEL CUSTOM STYLES -->
+    <!-- END PAGE LEVEL CUSTOM STYLES --> 
 
 </head>
 
@@ -383,43 +383,51 @@
   </div>
   <!-- End of Page Wrapper -->
 
+ <!-- End of Page Wrapper -->
 
 
-<!-- Bootstrap core JavaScript-->
+
+
+  <!-- Bootstrap core JavaScript-->
   <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
   <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
+  <!-- Core plugin JavaScript-->
+  <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
 
+  <!-- Custom scripts for all pages-->
+  <script src="{% static 'js/sb-admin-2.min.js' %}"></script>
 
-    <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
-    <script src="{% static 'assets/js/libs/jquery-3.1.1.min.js' %}"></script>
-    <script src="{% static 'bootstrap/js/popper.min.js' %}"></script>
-    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'plugins/perfect-scrollbar/perfect-scrollbar.min.js' %}"></script>
-    <script src="{% static 'assets/js/app.js' %}"></script>
-    
-    <script>
+  <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
+  <script src="{% static 'assets/js/libs/jquery-3.1.1.min.js' %}"></script>
+  <script src="{% static 'bootstrap/js/popper.min.js' %}"></script>
+<!--   <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script> -->
+  <script src="{% static 'plugins/perfect-scrollbar/perfect-scrollbar.min.js' %}"></script>
+  <script src="{% static 'assets/js/app.js' %}"></script>
+
+  <script src="{% static 'assets/js/custom.js' %}"></script>
+  <!-- END GLOBAL MANDATORY SCRIPTS -->
+
+  <!-- BEGIN PAGE LEVEL CUSTOM SCRIPTS -->
+  <script src="{% static 'plugins/table/datatable/datatables.js' %}"></script>
+  <!-- NOTE TO Use Copy CSV Excel PDF Print Options You Must Include These Files  -->
+  <script src="{% static 'plugins/table/datatable/button-ext/dataTables.buttons.min.js' %}"></script>
+  <script src="{% static 'plugins/table/datatable/button-ext/jszip.min.js' %}"></script>    
+  <script src="{% static 'plugins/table/datatable/button-ext/buttons.html5.min.js' %}"></script>
+  <script src="{% static 'plugins/table/datatable/button-ext/buttons.print.min.js' %}"></script>
+  <script src="{% static 'plugins/table/datatable/button-ext/buttons.flash.min.js' %}"></script>
+  <script src="{% static 'plugins/table/datatable/button-ext/pdfmake.min.js' %}"></script>
+  <script src="{% static 'plugins/table/datatable/button-ext/vfs_fonts.js' %}"></script>
+
+  <script>
         $(document).ready(function() {
             App.init();
         });
-    </script>
-
-    
-    <script src="{% static 'assets/js/custom.js' %}"></script>
-    <!-- END GLOBAL MANDATORY SCRIPTS -->
-
-    <!-- BEGIN PAGE LEVEL CUSTOM SCRIPTS -->
-    <script src="{% static 'plugins/table/datatable/datatables.js' %}"></script>
-
-    <!-- NOTE TO Use Copy CSV Excel PDF Print Options You Must Include These Files  -->
-    
-    <script src="{% static 'plugins/table/datatable/button-ext/dataTables.buttons.min.js' %}"></script>
-    <script src="{% static 'plugins/table/datatable/button-ext/jszip.min.js' %}"></script>    
-    <script src="{% static 'plugins/table/datatable/button-ext/buttons.html5.min.js' %}"></script>
-    <script src="{% static 'plugins/table/datatable/button-ext/buttons.print.min.js' %}"></script>
+  </script>
+  
 
 <script>
-       
+     
         $('#html5-extension').DataTable( 
         {
             dom: '<"row"<"col-md-12"<"row"<"col-md-6"B><"col-md-6"f> > ><"col-md-12"rt> <"col-md-12"<"row"<"col-md-5"i><"col-md-7"p>>> >',

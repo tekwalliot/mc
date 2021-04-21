@@ -689,7 +689,6 @@ var myBarChart = {
 
     scales: {
       xAxes: [{
-   
         scaleLabel: {
             display: true,
             labelString: 'Date',
@@ -697,6 +696,7 @@ var myBarChart = {
             fontStyle: "bold",
             // barPercentage: 0.2
           },
+
 
         gridLines: {
           display: false,
@@ -712,12 +712,13 @@ var myBarChart = {
         ticks: {
           beginAtZero:true,
           maxTicksLimit: 10,
-          padding: 1,
+          // padding: 1,
           // Include a dollar sign in the ticks
           callback: function(value, index, values) {
             return  number_format(value);
           }
         },
+
 
         scaleLabel: {
             display: true,
@@ -771,7 +772,7 @@ var myBarChart = {
       options.tooltips.callbacks = {
         label: function(tooltipItem, chart) {
           var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-          return datasetLabel + number_format(tooltipItem.yLabel) + ' KWH' ;
+          return datasetLabel + Number(tooltipItem.yLabel).toFixed(1) + ' KWH' ;
         }
       };
       options.scales.yAxes[0].scaleLabel = {
@@ -780,6 +781,14 @@ var myBarChart = {
             fontColor: "#5cb85c",
             fontStyle: "bold"
           };
+          options.scales.yAxes[0].ticks = {
+          beginAtZero:true,
+          stepSize: 2,
+
+          callback: function(value, index, values) {
+            return  number_format(value);
+          }
+        };
       options.scales.xAxes[0].scaleLabel = {
             display: true,
             labelString: 'Date',
@@ -810,6 +819,16 @@ var myBarChart = {
             fontColor: "#4e73df",
             fontStyle: "bold"
           };
+
+      options.scales.yAxes[0].ticks = {
+          beginAtZero:true,
+          // maxTicksLimit: 10,
+          // padding: 1,
+          // Include a dollar sign in the ticks
+          callback: function(value, index, values) {
+            return  number_format(value);
+          }
+        },
 
         options.scales.xAxes[0].scaleLabel = {
             display: true,

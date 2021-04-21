@@ -325,6 +325,8 @@
 
           </div>
 
+          <h5 class="m-1 font-weight-bold text-dark">Project Analysis</h5>
+
 
 <div class="card" id="hiddenSpan" style="display:none">
                   <div class="card-body">
@@ -379,9 +381,8 @@
             <div class="col-xl-12 col-lg-7">
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
-                               <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h7 class="m-1 font-weight-bold text-primary">Comparative Perforormance Analysis for Total Flow Vs Avg. Flow Per Day Vs Total Power Per System</h7>
-
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
@@ -440,7 +441,7 @@
                   </div>
                   <div class="mt-4 text-center small">
                     <span class="mr-2">
-                      <i class="fas fa-circle text-success"></i> Live Running Systems:{{runsyst}}
+                      <i class="fas fa-circle text-success"></i> Live Running Systems:{{ runsyst }}
                     </span>
                     <span class="mr-2">
                       <i class="fas fa-circle text-primary"></i> Total Systems:{{ count }}
@@ -550,7 +551,7 @@ function number_format(number, decimals, dec_point, thousands_sep) {
 
 // Bar Chart Example
 var xaxis_data = {{ xaxis|safe}};
-var yaxis_data = {{ yaxis_en|safe}};
+var yaxis_data = {{ yaxis_e|safe}};
 var ctx = document.getElementById("myBarChart1");
 var myBarChart = {
   type: 'bar',
@@ -664,12 +665,12 @@ var myBarChart = {
       options.tooltips.callbacks = {
         label: function(tooltipItem, chart) {
           var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-          return datasetLabel + number_format(tooltipItem.yLabel) + ' KWH' ;
+          return datasetLabel + Number(tooltipItem.yLabel).toFixed(2) + ' MWH' ;
         }
       };
       options.scales.yAxes[0].scaleLabel = {
             display: true,
-            labelString: 'Total Project Power Generation in KWH',
+            labelString: 'Total Project Power Generation in MWH',
             fontColor: "#5cb85c",
             fontStyle: "bold"
           };
@@ -745,15 +746,6 @@ var myBarChart = {
       myChartData.update();
     });
 
-    //  $("#2").click(function() {
-    //   var yaxis_data  = [60, 80, 100, 120];
-    //   var data = myChartData.config.data;
-    //   // myChartData.config.type = 'line'
-    //   data.datasets[0].data = yaxis_data;
-    //   data.labels = xaxis_data;
-    //   myChartData.update();
-    // });
-
   </script>
 
   <script type="text/javascript">
@@ -818,7 +810,7 @@ var options5 = {
     type: 'line',
     stacked: false,
     toolbar: {
-      show: false,
+      show: true,
     }
   },
   grid: {
@@ -868,7 +860,7 @@ var options5 = {
     //   text: 'Points',
     // },
     min: 0,
-    max: 40000
+    max: 20000
   },
   legend: {
     position: 'top',

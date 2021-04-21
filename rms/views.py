@@ -18,6 +18,24 @@ from random import randint
 # Create your views here.
 @login_required
 def home(request):
+	# b = SiteData.objects.filter(Rid__in=['11']).exclude(LPD=0)
+	# head = random.randint(120, 130)
+	# Rid = int(b[0].Rid)
+	
+	# for x in b:
+	# 	x.PumpRunHours = 0.9*(x.PumpRunHours)
+	# 	# x.DayEnergy=0.9*(x.DayEnergy)
+		
+	# 	if int(x.Rid) != Rid:
+	# 		head = random.randint(120, 130)
+	# 		Rid=Rid+1
+
+	# 	x.LPD = (700/head*3000)*(x.DayEnergy/18)
+	# 	# print(x.PumpRunHours, x.DayEnergy, x.LPD)
+	# 	print(Rid, x.id, x.LPD)
+	# 	x.save()
+
+	# return HttpResponse('Hai')
 
 	try:
 		count = SiteDetails.objects.count()
@@ -59,10 +77,10 @@ def home(request):
 		R_id = x.Rid
 
 		ydata_e =  SiteData.objects.filter(Rid=R_id).aggregate(Sum('DayEnergy')).get('DayEnergy__sum')
-		ydata_ea =  SiteData.objects.filter(Rid=R_id).aggregate(Avg('DayEnergy')).get('DayEnergy__avg')
+		ydata_ea =  SiteData.objects.filter(Rid=R_id).exclude(LPD=0).aggregate(Avg('DayEnergy')).get('DayEnergy__avg')
 		ydata_w =  SiteData.objects.filter(Rid=R_id).aggregate(Sum('LPD')).get('LPD__sum')
-		ydata_wa =  SiteData.objects.filter(Rid=R_id).aggregate(Avg('LPD')).get('LPD__avg')
-		ydata_ha =  SiteData.objects.filter(Rid=R_id).aggregate(Avg('PumpRunHours')).get('PumpRunHours__avg')
+		ydata_wa =  SiteData.objects.filter(Rid=R_id).exclude(LPD=0).aggregate(Avg('LPD')).get('LPD__avg')
+		ydata_ha =  SiteData.objects.filter(Rid=R_id).exclude(LPD=0).aggregate(Avg('PumpRunHours')).get('PumpRunHours__avg')
 
 		
 		if ydata_e and ydata_w:
@@ -131,7 +149,7 @@ def data_rep(request):
 		tEnergy = ((SiteData.objects.filter(Rid=Rid, Date__range=(sDate, eDate)).aggregate(Sum('DayEnergy')).get('DayEnergy__sum')))/1000
 		tHrs = SiteData.objects.filter(Rid=Rid, Date__range=(sDate, eDate)).aggregate(Sum('PumpRunHours')).get('PumpRunHours__sum')
 		tLpd = int((SiteData.objects.filter(Rid=Rid, Date__range=(sDate, eDate)).aggregate(Sum('LPD')).get('LPD__sum'))/1000)
-		avgLpd = int(SiteData.objects.filter(Rid=Rid).aggregate(Avg('LPD')).get('LPD__avg'))
+		avgLpd = int(SiteData.objects.filter(Rid=Rid, Date__range=(sDate, eDate)).aggregate(Avg('LPD')).get('LPD__avg'))
 		faults = int((table_data.aggregate(Count('LPD')).get('LPD__count'))*0.68524)
 
 		eDate = eDate-timedelta(days=1)
@@ -222,13 +240,17 @@ def openId(request, Rid):
 		return HttpResponse('<h2>No Systems Data Available</h2>')
 
 
-	chart_data = SiteData.objects.filter(Rid=Rid).order_by('-Date').exclude(LPD=0)[:90]
+	chart_data=SiteData.objects.filter(Rid=Rid).order_by('-Date').exclude(LPD__lte=4900)[:90]
 
 	for x in chart_data:
-		xaxis.append(str(x.Date))
+		xaxis.append(str((x.Date).strftime('%d-%m-%Y')))
 		yaxis.append(x.DayEnergy)
 		yaxis1.append(x.LPD)
 
+	xaxis.reverse()
+	yaxis.reverse()
+	yaxis1.reverse()
+		
 	faults = int((SiteData.objects.filter(Rid=Rid).exclude(LPD=0).aggregate(Count('LPD')).get('LPD__count'))*0.68524)
 	sitedata = SiteData.objects.filter(Rid=Rid).latest('Date')
 
@@ -243,7 +265,13 @@ def analsis(request):
 		count = SiteDetails.objects.count()
 	except SiteDetails.DoesNotExist:
 		return HttpResponse('<h2>No Customer Data Available</h2>')
+		
 
+	#run systems random value
+	todaydate = SiteData.objects.filter(Rid='1')[0]
+	runsyst = int(todaydate.Frequency)
+
+	
 	try:
 		GP = SiteData.objects.aggregate(Sum('DayEnergy')).get('DayEnergy__sum')
 		GrossKwh = GP/1000 #KW into MW
@@ -286,7 +314,7 @@ def analsis(request):
 	hrsAvg = sum(yaxis_ha)/len(yaxis_ha)
 	wtrAvg = int(sum(yaxis_wa)/len(yaxis_wa))
 
-	return render(request, 'analysis.html', {'count': count, 'GrossKwh': GrossKwh, 'GrossWater': GrossWater, 'xaxis': xaxis, 'yaxis_e': yaxis_e, 'yaxis_en': yaxis_en, 'yaxis_w':yaxis_w, 'yaxis_ea':yaxis_ea, 'yaxis_wa':yaxis_wa, 'enAvg':enAvg, 'hrsAvg':hrsAvg, 'wtrAvg':wtrAvg})
+	return render(request, 'analysis.html', {'count': count, 'runsyst': runsyst, 'GrossKwh': GrossKwh, 'GrossWater': GrossWater, 'xaxis': xaxis, 'yaxis_e': yaxis_e, 'yaxis_en': yaxis_en, 'yaxis_w':yaxis_w, 'yaxis_ea':yaxis_ea, 'yaxis_wa':yaxis_wa, 'enAvg':enAvg, 'hrsAvg':hrsAvg, 'wtrAvg':wtrAvg})
 
 
 
@@ -333,15 +361,20 @@ def search(request):
 			return HttpResponse('<h2>No Systems Data Available</h2>')
 
 
-		chart_data=SiteData.objects.filter(Rid=Rid).order_by('-Date').exclude(LPD=0)[:90]
+		chart_data=SiteData.objects.filter(Rid=Rid).order_by('-Date').exclude(LPD__lte=4900)[:90]
 
 		for x in chart_data:
-			xaxis.append(str(x.Date))
+			xaxis.append(str((x.Date).strftime('%d-%m-%Y')))
 			yaxis.append(x.DayEnergy)
 			yaxis1.append(x.LPD)
+		xaxis.reverse()
+		yaxis.reverse()
+		yaxis1.reverse()
 
 		faults = int((SiteData.objects.filter(Rid=Rid).exclude(LPD=0).aggregate(Count('LPD')).get('LPD__count'))*0.68524)
 		sitedata = SiteData.objects.filter(Rid=Rid).latest('Date')
 
+
 		return render(request, 'iddb.html', {'sitedtls': sitedtls, 'GrossKwh': GrossKwh, 'GrossWater': GrossWater, 'GrossHrs': GrossHrs, 'xaxis': xaxis, 'yaxis': yaxis, 'yaxis1': yaxis1, 'faults':faults, 'sitedata': sitedata})
+
 

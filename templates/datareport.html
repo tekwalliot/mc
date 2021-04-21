@@ -10,7 +10,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Meera and Ceiko - RMS</title>
+  <title>Meera and Ceiko - RMS</title> 
 
   <!-- Custom fonts for this template-->
   <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
@@ -370,9 +370,9 @@
                                             <tr>
                                               <td style="color: green; font-weight: normal">{{x.Rid}}</td>
                                               <td style="color: green; font-weight: normal">{{x.Date}}</td>
-                                              <td style="color: green; font-weight: normal">{{x.DayEnergy}} Kwh</td>
+                                              <td style="color: green; font-weight: normal">{{x.DayEnergy|floatformat:'1'}} Kwh</td>
                                               <td style="color: green; font-weight: normal">{{x.LPD}} Liters</td>
-                                              <td style="color: green; font-weight: normal">{{x.PumpRunHours}} Hours</td>
+                                              <td style="color: green; font-weight: normal">{{x.PumpRunHours|floatformat:'1'}} Hours</td>
                                             </tr>
                                       {% endfor %}
                                     </tbody>
@@ -434,16 +434,6 @@
     <script src="{% static 'plugins/table/datatable/button-ext/pdfmake.min.js' %}"></script>
     <script src="{% static 'plugins/table/datatable/button-ext/vfs_fonts.js' %}"></script>
 
-
-<!--     <script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
-    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
-    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script> -->
-
-    
-  
-
- 
 <script>
         $(document).ready(function() {
             App.init();
